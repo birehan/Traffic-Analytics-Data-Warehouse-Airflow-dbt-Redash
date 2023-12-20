@@ -32,8 +32,8 @@ This repository contains the necessary files to set up a Dockerized Airflow envi
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/airflow-data-loading.git
-   cd airflow-data-loading
+   git clone https://github.com/birehan/Traffic-Analytics-Data-Warehouse-Airflow-dbt-Redash
+   cd Traffic-Analytics-Data-Warehouse-Airflow-dbt-Redash
    ```
 
 2. **Configure Environment Variables (Optional):**
