@@ -42,7 +42,7 @@ models:
       - name: stddev_avg_speed
         description: Standard deviation of the "avg_speed" column.
 
-    - name: avg_traveled_dist_by_type
+  - name: avg_traveled_dist_by_type
     description: |
       This dbt model calculates the average traveled distance by type in the "vehicle_data" table.
 
