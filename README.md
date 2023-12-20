@@ -11,10 +11,12 @@ This project focuses on creating a scalable data warehouse for a city traffic de
 The project structure includes:
 
 - **data:** Raw and cleaned datasets' CSV files.
+- **dags:** Airflow DAGs for task orchestration.
 - **notebooks:** Jupyter notebook for Explanatory Data Analysis (EDA).
+- **screenshots:** Visual representations of the project, including tech stack flow, path for track ID, and speed comparisons.
 - **scripts:** Python utility scripts.
-- **tests:** Folder for pro- **scripts:** Python utility scripts.
-
+- **traffic_dbt:** dbt (Data Build Tool) files and configurations.
+- **docker-compose.yaml:** YAML file for Docker Compose, facilitating the setup of Airflow and Docker.
 
 # Airflow Data Loading with Docker
 
