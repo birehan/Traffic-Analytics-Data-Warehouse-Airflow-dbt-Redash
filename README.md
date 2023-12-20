@@ -1,6 +1,20 @@
 # Traffic-Analytics-Data-Warehouse-Airflow-dbt-Redash
 
-Traffic Analytics Data Warehouse Airflow dbt Redash
+## Overview
+
+This project focuses on creating a scalable data warehouse for a city traffic department, utilizing swarm UAVs (drones) to collect traffic data. The data is intended for improving traffic flow and undisclosed projects. The tech stack comprises MySQL, DBT, and Airflow, following the Extract Load Transform (ELT) framework.
+
+![Tech Stack Flow](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*e33d2qsI15lKO5a--O8Ocg.png?raw=true)
+
+## Project Structure
+
+The project structure includes:
+
+- **data:** Raw and cleaned datasets' CSV files.
+- **notebooks:** Jupyter notebook for Explanatory Data Analysis (EDA).
+- **scripts:** Python utility scripts.
+- **tests:** Folder for pro- **scripts:** Python utility scripts.
+
 
 # Airflow Data Loading with Docker
 
