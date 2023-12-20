@@ -70,15 +70,3 @@ This repository contains the necessary files to set up a Dockerized Airflow envi
 
 - The Airflow DAG `create_vehicle_tables` is designed to create a PostgreSQL database, tables, and load data from a CSV file.
 - Customize the DAG or SQL scripts in the `dags` and `dags/sql` directories as needed.
-
-## Additional Notes
-
-- Make sure to adjust file paths, database connection details, and other configurations in the DAG and SQL scripts to suit your environment.
-
-## Troubleshooting
-
-- If you encounter any issues, refer to the [Troubleshooting](#troubleshooting) section in the README.
-
-## License
-
-This project is licensed under the [Apache License, Version 2.0](LICENSE).
