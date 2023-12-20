@@ -1,0 +1,54 @@
+# models/schema.yml
+
+version: 2
+
+models:
+  - name: descriptive_analysis
+    description: |
+      This dbt model calculates descriptive statistics for the "vehicle_data" table,
+      providing insights into the distribution of key numerical columns.
+
+    columns:
+      - name: total_rows
+        description: Total number of rows in the "vehicle_data" table.
+
+      - name: avg_traveled_d
+        description: Average (mean) value of the "traveled_d" column.
+
+      - name: median_traveled_d
+        description: Median value of the "traveled_d" column.
+
+      - name: min_traveled_d
+        description: Minimum value of the "traveled_d" column.
+
+      - name: max_traveled_d
+        description: Maximum value of the "traveled_d" column.
+
+      - name: stddev_traveled_d
+        description: Standard deviation of the "traveled_d" column.
+
+      - name: avg_avg_speed
+        description: Average (mean) value of the "avg_speed" column.
+
+      - name: median_avg_speed
+        description: Median value of the "avg_speed" column.
+
+      - name: min_avg_speed
+        description: Minimum value of the "avg_speed" column.
+
+      - name: max_avg_speed
+        description: Maximum value of the "avg_speed" column.
+
+      - name: stddev_avg_speed
+        description: Standard deviation of the "avg_speed" column.
+
+    - name: avg_traveled_dist_by_type
+    description: |
+      This dbt model calculates the average traveled distance by type in the "vehicle_data" table.
+
+    columns:
+      - name: type
+        description: The type of vehicle.
+
+      - name: avg_distance
+        description: Average traveled distance for each vehicle type.
