@@ -11,7 +11,7 @@ default_args = {
 
 def run_dbt():
     try:
-        subprocess.run(['dbt', 'run', '--projects_dir', '~/traffic_dbt'], check=True)
+        subprocess.run(['dbt', 'run', '--projects_dir', '/dbt'], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running dbt: {e}")
 
