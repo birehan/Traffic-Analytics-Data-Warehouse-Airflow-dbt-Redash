@@ -55,9 +55,7 @@ def run_sql_query(connection_params: dict, query: str) -> None:
         print("Log success")
 
     except Exception as e:
-        # Log the error
-        print("Log the error")
-
+        print("Log the error: ", e)
     finally:
         # Close the cursor and connection
         if cursor:
@@ -67,35 +65,7 @@ def run_sql_query(connection_params: dict, query: str) -> None:
 
     return None
 
-# def populate_dataframe_to_database(connection_params: dict, df: pd.DataFrame, table_name:str) -> None:
-#     try:
 
-#         # Extract connection parameters
-#         db_url = f"postgresql+psycopg2://{connection_params['user']}:{connection_params['password']}@{connection_params['host']}:{connection_params['port']}/{connection_params['database']}"
-
-        
-
-#         # Create database connection
-#         engine = create_engine(db_url, echo=False)
-
-#         # Log information
-
-#         # Insert DataFrame into the database
-#         df.to_sql(name=table_name, con=engine, if_exists='replace', index=False)
-
-#         # Log information
-#         print(f"Inserted {len(df)} rows into the database table {table_name}.")
-
-#     except Exception as e:
-#         # Log the error
-#         print(f"Error inserting data into the database: {e}")
-
-#     finally:
-#         # Close the connection
-#         if engine:
-#             engine.dispose()
-
-#     return None
 
 
 
