@@ -3,52 +3,98 @@
 version: 2
 
 models:
-  - name: descriptive_analysis
+  - name: all_vehicles
     description: |
-      This dbt model calculates descriptive statistics for the "vehicle_data" table,
-      providing insights into the distribution of key numerical columns.
+      This dbt view returns all columns and rows from the "vehicle_data" table.
 
     columns:
-      - name: total_rows
-        description: Total number of rows in the "vehicle_data" table.
+      - name: track_id
+        description: The unique identifier for each vehicle's track.
 
-      - name: avg_traveled_d
-        description: Average (mean) value of the "traveled_d" column.
-
-      - name: median_traveled_d
-        description: Median value of the "traveled_d" column.
-
-      - name: min_traveled_d
-        description: Minimum value of the "traveled_d" column.
-
-      - name: max_traveled_d
-        description: Maximum value of the "traveled_d" column.
-
-      - name: stddev_traveled_d
-        description: Standard deviation of the "traveled_d" column.
-
-      - name: avg_avg_speed
-        description: Average (mean) value of the "avg_speed" column.
-
-      - name: median_avg_speed
-        description: Median value of the "avg_speed" column.
-
-      - name: min_avg_speed
-        description: Minimum value of the "avg_speed" column.
-
-      - name: max_avg_speed
-        description: Maximum value of the "avg_speed" column.
-
-      - name: stddev_avg_speed
-        description: Standard deviation of the "avg_speed" column.
-
-  - name: avg_traveled_dist_by_type
-    description: |
-      This dbt model calculates the average traveled distance by type in the "vehicle_data" table.
-
-    columns:
       - name: type
+        description: The type of the vehicle.
+
+      - name: traveled_d
+        description: The distance traveled by the vehicle.
+
+      - name: avg_speed
+        description: The average speed of the vehicle.
+
+  - name: avg_dist_by_type
+    description: |
+      This dbt view calculates the average traveled distance by vehicle type in the "vehicle_data" table.
+
+    columns:
+      - name: Vehicle Type
         description: The type of vehicle.
 
-      - name: avg_distance
+      - name: Average Distance
         description: Average traveled distance for each vehicle type.
+
+  - name: avg_distance_speed
+    description: |
+      This dbt view combines data from 'avg_dist_by_type', 'avg_speed_by_type', and 'count_by_type'
+      to provide the average distance, average speed, and type count for each vehicle type.
+
+    columns:
+      - name: Average Distance
+        description: Average traveled distance for each vehicle type.
+
+      - name: Average Speed
+        description: Average speed for each vehicle type.
+
+      - name: Vehicle Type
+        description: The type of vehicle.
+
+      - name: Type Count
+        description: Count of rows for each vehicle type.
+
+  - name: avg_speed_by_type
+    description: |
+      This dbt view calculates the average speed by vehicle type in the "vehicle_data" table.
+
+    columns:
+      - name: Vehicle Type
+        description: The type of vehicle.
+
+      - name: Average Speed
+        description: Average speed for each vehicle type.
+
+  - name: count_by_type
+    description: |
+      This dbt view calculates the count of rows for each vehicle type in the "vehicle_data" table.
+
+    columns:
+      - name: Vehicle Type
+        description: The type of vehicle.
+
+      - name: Type Count
+        description: Count of rows for each vehicle type.
+
+  - name: distance_distribution
+    description: |
+      This dbt view calculates the distribution of traveled distances in the "vehicle_data" table.
+
+    columns:
+      - name: Traveled Distance
+        description: The distance traveled by vehicles.
+
+      - name: Vehicle Count
+        description: Count of vehicles for each traveled distance.
+
+  - name: vehicle_summary
+    description: |
+      This dbt view provides a summary of information about automobiles from the "vehicle_data" table.
+
+    columns:
+      - name: Automobile type
+        description: The type of automobile.
+
+      - name: Automobile count
+        description: Count of automobiles for each type.
+
+      - name: Avg distance traveled
+        description: Average distance traveled for each type of automobile.
+
+      - name: Avg speed by automobile
+        description: Average speed for each type of automobile.
