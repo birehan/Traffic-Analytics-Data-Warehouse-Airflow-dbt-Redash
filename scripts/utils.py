@@ -37,9 +37,12 @@ def format_data(file_path: str) -> pd.DataFrame:
         # If the width is not greater than 10, return the original DataFrame
         return df
 
-
 def run_sql_query(connection_params: dict, query: str) -> None:
+    connection = None
+    cursor = None
+
     try:
+        # Establish the database connection
         connection = psycopg2.connect(**connection_params)
 
         # Create a cursor
@@ -56,7 +59,7 @@ def run_sql_query(connection_params: dict, query: str) -> None:
 
     except Exception as e:
         # Log the error
-        print("Log the error")
+        print(f"Error: {e}")
 
     finally:
         # Close the cursor and connection
@@ -66,6 +69,36 @@ def run_sql_query(connection_params: dict, query: str) -> None:
             connection.close()
 
     return None
+
+# def run_sql_query(connection_params: dict, query: str) -> None:
+#     try:
+#         connection = psycopg2.connect(**connection_params)
+
+#         # Create a cursor
+#         cursor = connection.cursor()
+
+#         # Execute the SQL query
+#         cursor.execute(query)
+
+#         # Commit the transaction
+#         connection.commit()
+
+#         # Log success
+#         print("Log success")
+
+#     except Exception as e:
+#         # Log the error
+#         print("Log the error")
+
+#     finally:
+#         # Close the cursor and connection
+#         if cursor:
+#             cursor.close()
+#         if connection:
+#             connection.close()
+
+#     return None
+    
 
 # def populate_dataframe_to_database(connection_params: dict, df: pd.DataFrame, table_name:str) -> None:
 #     try:
